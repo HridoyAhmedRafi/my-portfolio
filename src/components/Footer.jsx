@@ -16,7 +16,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/",
+    href: "https://www.linkedin.com/in/hridoy-ahmed-rafi",
     icon: FaLinkedinIn,
   },
   {
