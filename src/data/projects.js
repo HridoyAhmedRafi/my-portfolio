@@ -20,13 +20,7 @@ export const projects = [
       "GitHub OAuth",
       "REST API",
     ],
-    highlights: [
-      "Browse latest and popular news",
-      "Explore news by category",
-      "Email/password, Google and GitHub sign-in",
-      "User profile management",
-      "Responsive news layout",
-    ],
+
     features: [
       "Browse latest news",
       "Explore different news categories",
@@ -85,13 +79,7 @@ export const projects = [
       "Tailwind CSS",
       "Context API",
     ],
-    highlights: [
-      "Browse and filter exercises",
-      "View detailed exercise information",
-      "Build a personal workout plan",
-      "Daily plan limited to five exercises",
-      "Responsive dark-themed design",
-    ],
+
     features: [
       "Browse and explore exercises",
       "View detailed exercise information",
@@ -121,8 +109,63 @@ export const projects = [
     github: "https://github.com/HridoyAhmedRafi/fit-log",
     liveDemo: "https://fit-log-swart.vercel.app/",
   },
+
   {
     id: 3,
+    slug: "bazar-dor",
+    title: "Bazar Dor",
+    category: "Next.js",
+    description:
+      "BazarDor is a modern web application that helps users explore daily essential products",
+    image: "/images/projects/bazar-dor.png",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "External API Integration",
+      "Authentication",
+      "React Hot Toastify",
+    ],
+
+    features: [
+      "View the prices of essential products",
+      "Explore products by category",
+      "View individual product details",
+      "Compare the prices of products across multiple markets",
+      "See whether product prices have increased or decreased",
+      "Organize products using the available sorting options",
+      "Bengali date and time formatting",
+      "Sign in and sign up using email/password or OAuth, with profile management support",
+      "User profile management and name update",
+      "Responsive layout for mobile, tablet and desktop",
+      "Use the application on mobile, tablet, and desktop screens",
+    ],
+    overview:
+      "BazarDor is a web application for exploring essential product prices across different markets in Bangladesh and comparing price differences between markets.",
+    structure: null,
+    learned: [
+      "Building a full-stack web application using Next.js and React",
+      "Creating responsive user interfaces with Tailwind CSS",
+      "Managing application data using TypeScript and MongoDB",
+      "Integrating external APIs to fetch product price data",
+      "Implementing user authentication and social sign-in with Google and GitHub",
+      "Managing user sessions and protecting authenticated routes",
+      "Implementing product filtering",
+      "Displaying product details and comparing prices across multiple markets",
+      "Tracking and displaying daily price increases and decreases",
+      "Managing user profile information and updating usernames",
+      "Displaying toast notifications for user feedback",
+      "Formatting dates in Bengali",
+      "Deploying a Next.js application on Vercel and troubleshooting deployment issues",
+    ],
+    github: "https://github.com/HridoyAhmedRafi/bazar-dor",
+    liveDemo: "https://bazar-dor-phi-ashen.vercel.app",
+  },
+
+  {
+    id: 4,
     slug: "devstack",
     title: "DevStack",
     category: "React",
@@ -137,13 +180,7 @@ export const projects = [
       "React Icons",
       "React Toastify",
     ],
-    highlights: [
-      "Explore different web technologies",
-      "Add technologies to Your Stack",
-      "Remove technologies or clear the stack",
-      "Interactive and responsive interface",
-      "Clean and modern design",
-    ],
+
     features: [
       "Explore different web technologies",
       "Build a personalized technology stack",

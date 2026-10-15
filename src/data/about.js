@@ -1,25 +1,13 @@
 export const aboutContent = {
-  paragraphs: [
-    "I'm Hridoy Ahmed Rafi, a web developer who enjoys turning ideas into functional, user-friendly digital experiences.",
-    "Web development attracts me because it allows me to combine creativity, logic, and problem-solving in one field.",
-    "Right now I'm comfortable building interfaces with React and Next.js, and I've practiced authentication with email/password, Google and GitHub sign-in, email verification and password reset. Backend development is the next big step in my journey.",
-    "My goal is to create scalable, high-quality, and impactful digital experiences using modern web technologies. I also aim to work with backend and AI-driven technologies to build more powerful and intelligent web solutions.",
-  ],
-  learned: [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "ES6+",
-    "TypeScript",
-    "React.js",
-    "Next.js",
-    "Tailwind CSS",
-    "React Hooks",
-    "State management",
-    "API integration",
-    "Authentication",
-    "Git & GitHub",
-  ],
-  currentFocus: "Authentication",
-  upNext: "Backend Development",
+  // true = show the photo on the left, false = hide it
+  showPhoto: true,
+  projectsBuilt: "10+",
+  intro: {
+    before: "I am a passionate ",
+    highlight: "Full Stack Developer",
+    after:
+      " dedicated to building modern, responsive and user-friendly web applications.",
+  },
+  extra:
+    "I enjoy combining creativity, logic and problem-solving, and I am now growing into backend development with Node.js and Express.js.",
 };

@@ -2,6 +2,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           </a>
           <Navbar />
           <main id="main-content">{children}</main>
+          <Footer></Footer>
         </ThemeProvider>
       </body>
     </html>

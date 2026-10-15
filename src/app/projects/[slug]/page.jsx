@@ -122,7 +122,7 @@ export default async function ProjectPage({ params }) {
         {/* Overview */}
         <Reveal>
           <section aria-labelledby="overview-heading">
-            <h2 id="overview-heading" className="text-2xl font-bold">
+            <h2 id="overview-heading" className=" text-2xl font-bold">
               Overview
             </h2>
             <p className="mt-4 leading-relaxed text-muted">{overview}</p>

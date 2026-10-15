@@ -1,63 +1,32 @@
+import { FaJs, FaReact, FaGitAlt, FaGithub } from "react-icons/fa";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaGitAlt,
-  FaGithub,
-  FaGoogle,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiTailwindcss,
   SiTypescript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
   SiVercel,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import {
-  Braces,
-  Layers,
-  ShieldCheck,
-  Mail,
-  Fingerprint,
-  BadgeCheck,
-  KeyRound,
-} from "lucide-react";
+import { Braces } from "lucide-react";
 
-export const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "HTML", icon: FaHtml5 },
-      { name: "CSS", icon: FaCss3Alt },
-      { name: "JavaScript", icon: FaJs },
-      { name: "ES6+", icon: Braces },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "React.js", icon: FaReact },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "Context API", icon: Layers },
-    ],
-  },
-  {
-    title: "Authentication",
-    skills: [
-      { name: "Better Auth", icon: ShieldCheck },
-      { name: "Email Authentication", icon: Mail },
-      { name: "OAuth", icon: Fingerprint },
-      { name: "Google Authentication", icon: FaGoogle },
-      { name: "GitHub Authentication", icon: FaGithub },
-      { name: "Email Verification", icon: BadgeCheck },
-      { name: "Password Reset", icon: KeyRound },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Git", icon: FaGitAlt },
-      { name: "GitHub", icon: FaGithub },
-      { name: "VS Code", icon: VscVscode },
-      { name: "Vercel", icon: SiVercel },
-    ],
-  },
+// `color` is a Tailwind text color class for the icon (it also controls light/dark mode).
+export const skills = [
+  { name: "JavaScript", icon: FaJs, color: "text-[#d4b200] dark:text-[#f7df1e]" },
+  { name: "ES6+", icon: Braces, color: "text-accent" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-[#3178c6]" },
+  { name: "React.js", icon: FaReact, color: "text-[#087ea4] dark:text-[#61dafb]" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06b6d4]" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-[#5fa04e]" },
+  { name: "Express.js", icon: SiExpress, color: "text-black dark:text-white" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-[#47a248]" },
+];
+
+export const tools = [
+  { name: "Git", icon: FaGitAlt, color: "text-[#f05032]" },
+  { name: "GitHub", icon: FaGithub, color: "text-black dark:text-white" },
+  { name: "VS Code", icon: VscVscode, color: "text-[#007acc]" },
+  { name: "Vercel", icon: SiVercel, color: "text-black dark:text-white" },
 ];

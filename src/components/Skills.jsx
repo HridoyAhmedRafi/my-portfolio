@@ -1,6 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
-import { skillCategories } from "@/data/skills";
+import { skills, tools } from "@/data/skills";
 
 export default function Skills() {
   return (
@@ -9,33 +9,44 @@ export default function Skills() {
         <SectionHeading
           eyebrow="// skills"
           title="My Skills"
-          description="Technologies and tools I have learned and used in my projects."
+          description="Technologies I have learned and use to build web applications."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {skillCategories.map(({ title, skills }, index) => (
-            <Reveal key={title} delay={index * 0.1} className="min-w-0">
-              <div className="h-full rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent">
-                <h3 className="text-lg font-semibold">{title}</h3>
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {skills.map(({ name, icon: Icon }) => (
-                    <li
-                      key={name}
-                      className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-sm font-medium text-muted transition-colors hover:border-accent hover:text-accent"
-                    >
-                      <Icon
-                        size={16}
-                        aria-hidden="true"
-                        className="shrink-0 text-accent"
-                      />
-                      {name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
+        {/* Skills grid */}
+        <ul className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+          {skills.map(({ name, icon: Icon, color }, index) => (
+            <li key={name} className="min-w-0">
+              <Reveal delay={index * 0.05} className="h-full">
+                <div className="flex h-full flex-col items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-2 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent">
+                  <Icon size={28} aria-hidden="true" className={color} />
+                  <span className="text-sm font-semibold">{name}</span>
+                </div>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {/* Tools */}
+        <Reveal className="mt-14">
+          <h3 className="text-2xl font-bold tracking-tight">Tools</h3>
+        </Reveal>
+
+        <ul className="mt-6 flex flex-wrap gap-3">
+          {tools.map(({ name, icon: Icon, color }, index) => (
+            <li key={name}>
+              <Reveal delay={index * 0.05}>
+                <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-accent">
+                  <Icon
+                    size={22}
+                    aria-hidden="true"
+                    className={`shrink-0 ${color}`}
+                  />
+                  <span className="text-sm font-semibold">{name}</span>
+                </div>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
