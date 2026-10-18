@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Tailwind v4: makes `dark:` classes work with next-themes (class strategy) */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Light mode colors */
