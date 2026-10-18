@@ -27,23 +27,35 @@ export default function About() {
           showPhoto ? "lg:grid-cols-2" : ""
         }`}
       >
-        {/* Photo */}
+        {/* Photo with pulsing outline rings */}
         {showPhoto && (
           <Reveal className="min-w-0">
-            <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-full border border-border bg-card ring-2 ring-accent ring-offset-4 ring-offset-background sm:w-64 lg:w-72">
-              {profile.image ? (
-                <Image
-                  src={profile.image}
-                  alt={`Portrait of ${profile.name}`}
-                  fill
-                  sizes="(min-width: 1024px) 288px, (min-width: 640px) 256px, 224px"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-6xl font-bold text-accent">
-                  {initials}
-                </div>
-              )}
+            <div className="relative mx-auto aspect-square w-56 sm:w-64 lg:w-72">
+              <span
+                aria-hidden="true"
+                className="ring-pulse absolute inset-0 rounded-full border-2 border-accent"
+              />
+              <span
+                aria-hidden="true"
+                className="ring-pulse ring-pulse-delay absolute inset-0 rounded-full border-2 border-accent"
+              />
+
+              <div className="relative h-full w-full overflow-hidden rounded-full border border-border bg-card ring-2 ring-accent ring-offset-4 ring-offset-background">
+                {profile.image ? (
+                  <Image
+                    src={profile.image}
+                    alt={`Portrait of ${profile.name}`}
+                    fill
+                    quality={95}
+                    sizes="(min-width: 1024px) 576px, (min-width: 640px) 512px, 448px"
+                    className="object-cover object-top"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-6xl font-bold text-accent">
+                    {initials}
+                  </div>
+                )}
+              </div>
             </div>
           </Reveal>
         )}
@@ -96,7 +108,7 @@ export default function About() {
               {skills.map(({ name }) => (
                 <li
                   key={name}
-                  className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium"
+                  className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium transition-colors hover:border-accent"
                 >
                   {name}
                 </li>

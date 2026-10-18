@@ -1,6 +1,13 @@
 export const profile = {
   name: "Hridoy Ahmed Rafi",
   title: "Full Stack Developer",
+  titles: [
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Problem Solver",
+    "Lifelong Learner & AI Enthusiast",
+    "Web Developer",
+  ],
   intro:
     "I build modern, scalable, and user-friendly web applications with a passion for clean code and great UX.",
   email: "hridoyahmedrafi20@gmail.com",

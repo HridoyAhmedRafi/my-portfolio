@@ -35,12 +35,8 @@ export default function Skills() {
           {tools.map(({ name, icon: Icon, color }, index) => (
             <li key={name}>
               <Reveal delay={index * 0.05}>
-                <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-accent">
-                  <Icon
-                    size={22}
-                    aria-hidden="true"
-                    className={`shrink-0 ${color}`}
-                  />
+                <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
+                  <Icon size={22} aria-hidden="true" className={`shrink-0 ${color}`} />
                   <span className="text-sm font-semibold">{name}</span>
                 </div>
               </Reveal>

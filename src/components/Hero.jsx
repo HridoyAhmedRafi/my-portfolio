@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { profile } from "@/data/profile";
 import { socialLinks } from "@/data/social";
+import TypingText from "./TypingText";
+import HeroBackground from "./HeroBackground";
 
 const container = {
   hidden: {},
@@ -32,8 +34,10 @@ export default function Hero() {
 };`;
 
   return (
-    <section id="home" className="flex min-h-screen items-center pt-16">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-2">
+    <section id="home" className="relative flex min-h-screen items-center pt-16">
+      <HeroBackground />
+
+      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-2">
         {/* Text side */}
         <motion.div
           variants={container}
@@ -54,15 +58,12 @@ export default function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-4 text-xl font-medium text-muted sm:text-2xl"
+            className="mt-4 min-h-[1.75rem] text-xl font-medium text-muted sm:min-h-[2rem] sm:text-2xl"
           >
-            {profile.title}
+            <TypingText titles={profile.titles} fallback={profile.title} />
           </motion.p>
 
-          <motion.p
-            variants={item}
-            className="mt-6 max-w-xl leading-relaxed text-muted"
-          >
+          <motion.p variants={item} className="mt-6 max-w-xl leading-relaxed text-muted">
             {profile.intro}
           </motion.p>
 
@@ -109,28 +110,40 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="order-1 mx-auto w-full min-w-0 max-w-sm lg:order-2 lg:max-w-md"
         >
-          {/* Circle profile picture */}
-          <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-full border border-border bg-card ring-2 ring-accent ring-offset-4 ring-offset-background sm:w-64 lg:w-72">
-            {profile.image ? (
-              <Image
-                src={profile.image}
-                alt={`Portrait of ${profile.name}`}
-                fill
-                priority
-                sizes="(min-width: 1024px) 288px, (min-width: 640px) 256px, 224px"
-                className="object-cover"
-              />
-            ) : (
-              <div
-                className="flex h-full w-full items-center justify-center text-6xl font-bold text-accent"
-                aria-label={`${profile.name} avatar`}
-              >
-                {initials}
-              </div>
-            )}
+          {/* Profile picture with pulsing outline rings */}
+          <div className="relative mx-auto aspect-square w-56 sm:w-64 lg:w-72">
+            <span
+              aria-hidden="true"
+              className="ring-pulse absolute inset-0 rounded-full border-2 border-accent"
+            />
+            <span
+              aria-hidden="true"
+              className="ring-pulse ring-pulse-delay absolute inset-0 rounded-full border-2 border-accent"
+            />
+
+            <div className="relative h-full w-full overflow-hidden rounded-full border border-border bg-card ring-2 ring-accent ring-offset-4 ring-offset-background">
+              {profile.image ? (
+                <Image
+                  src={profile.image}
+                  alt={`Portrait of ${profile.name}`}
+                  fill
+                  priority
+                  quality={95}
+                  sizes="(min-width: 1024px) 576px, (min-width: 640px) 512px, 448px"
+                  className="object-cover object-top"
+                />
+              ) : (
+                <div
+                  className="flex h-full w-full items-center justify-center text-6xl font-bold text-accent"
+                  aria-label={`${profile.name} avatar`}
+                >
+                  {initials}
+                </div>
+              )}
+            </div>
           </div>
 
-          <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card p-4">
+          <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-card p-4">
             <pre className="font-mono text-xs leading-relaxed text-muted sm:text-sm">
               <code>{codeSnippet}</code>
             </pre>

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Tailwind v4: makes `dark:` classes work with next-themes (class strategy) */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Light mode colors */
@@ -46,14 +47,59 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* Blinking cursor for the typing animation */
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -0.12em;
+  background: var(--accent);
+  animation: cursor-blink 1s steps(1) infinite;
+}
+
+/* Pulsing outline rings around the profile pictures */
+@keyframes ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+}
+
+.ring-pulse {
+  animation: ring-pulse 2.4s ease-out infinite both;
+}
+
+.ring-pulse-delay {
+  animation-delay: 1.2s;
+}
+
+/* Hero background: a static dot pattern that fades out towards the edges */
+.hero-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--border) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 85%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 85%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -62,5 +108,12 @@ body {
   }
   body {
     transition: none;
+  }
+  .typing-cursor,
+  .ring-pulse {
+    animation: none;
+  }
+  .ring-pulse {
+    opacity: 0;
   }
 }
