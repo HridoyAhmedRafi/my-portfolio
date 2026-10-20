@@ -41,13 +41,11 @@ export default async function ProjectPage({ params }) {
 
   const {
     title,
-    category,
     description,
+    detailsDescription,
     image,
-    overview,
     features,
     technologies,
-    structure,
     learned,
     github,
     liveDemo,
@@ -57,7 +55,7 @@ export default async function ProjectPage({ params }) {
     <article className="mx-auto max-w-4xl px-6 pb-24 pt-28">
       <Link
         href="/#projects"
-        className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+        className="inline-flex items-center gap-2 text-sm text-accent"
       >
         <ArrowLeft size={16} aria-hidden="true" />
         Back to projects
@@ -65,11 +63,12 @@ export default async function ProjectPage({ params }) {
 
       {/* Header */}
       <header className="mt-8">
-        <p className="font-mono text-sm text-accent">{category}</p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted">{description}</p>
+        <p className="mt-4 max-w-3xl text-md leading-relaxed text-muted">
+          {detailsDescription ?? description}
+        </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
@@ -102,6 +101,7 @@ export default async function ProjectPage({ params }) {
               alt={`Screenshot of the ${title} project`}
               fill
               priority
+              quality={95}
               sizes="(min-width: 896px) 896px, 100vw"
               className="object-cover object-top"
             />
@@ -119,16 +119,6 @@ export default async function ProjectPage({ params }) {
       </Reveal>
 
       <div className="mt-14 space-y-14">
-        {/* Overview */}
-        <Reveal>
-          <section aria-labelledby="overview-heading">
-            <h2 id="overview-heading" className=" text-2xl font-bold">
-              Overview
-            </h2>
-            <p className="mt-4 leading-relaxed text-muted">{overview}</p>
-          </section>
-        </Reveal>
-
         {/* Features */}
         <Reveal>
           <section aria-labelledby="features-heading">
@@ -160,7 +150,7 @@ export default async function ProjectPage({ params }) {
               {technologies.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-lg border border-border bg-card px-3 py-1.5 font-mono text-sm text-muted"
+                  className="rounded-lg border border-border bg-card px-3 py-1.5 font-mono text-sm text-muted transition-colors hover:border-accent hover:text-foreground"
                 >
                   {tech}
                 </li>
@@ -168,22 +158,6 @@ export default async function ProjectPage({ params }) {
             </ul>
           </section>
         </Reveal>
-
-        {/* Project structure (only if the project has one) */}
-        {structure && (
-          <Reveal>
-            <section aria-labelledby="structure-heading">
-              <h2 id="structure-heading" className="text-2xl font-bold">
-                Project Structure
-              </h2>
-              <div className="mt-5 overflow-x-auto rounded-xl border border-border bg-card p-4">
-                <pre className="font-mono text-sm leading-relaxed text-muted">
-                  <code>{structure}</code>
-                </pre>
-              </div>
-            </section>
-          </Reveal>
-        )}
 
         {/* What I learned */}
         <Reveal>
