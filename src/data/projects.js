@@ -177,50 +177,6 @@ export const projects = [
     github: "https://github.com/HridoyAhmedRafi/DevStack",
     liveDemo: "https://dev-stack-taupe.vercel.app/",
   },
-
-  {
-    id: 5,
-    slug: "book-vibe",
-    title: "Book Vibe",
-    category: "Next.js",
-    description:
-      "Book Vibe is a reading companion for discovering and organizing books. Users browse a curated catalog, explore detailed book pages, and build personal read and wishlist collections. Saved titles can be compared at a glance, and reading habits are summarized visually.",
-
-    image: "/images/projects/book-vibe.png",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "DaisyUI",
-      "Recharts",
-      "React Context API",
-    ],
-
-    features: [
-      "Browse and explore books",
-      "View detailed book information",
-      "Add books to the Read list",
-      "Save books to the Wishlist",
-      "View page-count chart for read books",
-      "Sort by ratings, number of page and published year",
-      "Responsive design for mobile, tablet, and desktop",
-      "Loading skeletons for a smoother user experience",
-    ],
-    overview:
-      "Book Vibe is a modern book discovery platform that helps users explore books, manage reading lists and wishlists, and track reading progress with interactive charts.",
-    structure: null,
-    learned: [
-      "Dynamic routing with Next.js",
-      "Reusable components",
-      "Context API",
-      "Responsive UI development with Tailwind CSS",
-      "Visualizing reading data with Recharts",
-      "Optimizing remote cover images with built-in tooling",
-    ],
-    github: "https://github.com/HridoyAhmedRafi/book-vibe",
-    liveDemo: "https://book-vibe-ten-vert.vercel.app",
-  },
 ];
 
 export const getProjectBySlug = (slug) =>
