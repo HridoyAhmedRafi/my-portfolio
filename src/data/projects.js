@@ -45,6 +45,17 @@ export const projects = [
       "Responsive UI and reusable components",
       "Toast notifications and user feedback",
     ],
+    challenges: [
+      "Configuring OAuth redirect URLs for social sign-in in production",
+      "Separating sign-up and sign-in flows by disabling automatic sign-in after registration",
+      "Managing authentication state and keeping user profile information synchronized",
+      "Handling loading and error states while fetching news articles",
+    ],
+    improvements: [
+      "Add a bookmark feature to save articles for later reading",
+      "Implement personalized news recommendations based on user interests",
+      "Add a search feature to find articles by title or keywords",
+    ],
     github: "https://github.com/HridoyAhmedRafi/bangla-news-24",
     liveDemo: "https://bangla-news-24-teal.vercel.app/",
   },
@@ -84,7 +95,16 @@ export const projects = [
       "Modeling exercise data with TypeScript interfaces",
       "Building responsive, mobile-first layouts",
       "Deriving totals and sorting from shared state",
-      "Building a real-world app with reusable components",
+      "Designing reusable components for a multi-page workout application",
+    ],
+    challenges: [
+      "Fetching and rendering exercise data from an external API",
+      "Managing workout selection, saved exercises, and completed workout states",
+      "Preventing duplicate exercises and enforcing the five-exercise daily plan limit",
+    ],
+    improvements: [
+      "Add workout history to track completed exercises over time",
+      "Introduce weekly workout progress charts and statistics",
     ],
     github: "https://github.com/HridoyAhmedRafi/fit-log",
     liveDemo: "https://fit-log-swart.vercel.app/",
@@ -120,6 +140,15 @@ export const projects = [
       "Update profile and manage sessions",
       "Responsive mobile, tablet, and desktop experience",
     ],
+    challenges: [
+      "Authentication session handling after social sign-in",
+      "Resolving Better Auth's invalid origin issue during Vercel deployment",
+      "Ensuring consistent authentication state across page navigation and refresh",
+    ],
+    improvements: [
+      "Add a product bookmarking feature to save frequently checked items",
+      "Expand market coverage to compare prices across more local markets in Bangladesh",
+    ],
 
     learned: [
       "Structuring a Next.js App Router project by feature",
@@ -138,47 +167,47 @@ export const projects = [
     liveDemo: "https://bazar-dor-phi-ashen.vercel.app",
   },
 
-  {
-    id: 4,
-    slug: "devstack",
-    title: "DevStack",
-    category: "React",
-    description:
-      "DevStack is a web app that helps developers explore and assemble their ideal technology stack. Browse a curated catalog of frontend, backend, database, language, styling, and tooling options, compare key details at a glance, then add favorites to a personal stack that updates instantly and can be refined anytime.",
-    image: "/images/projects/devstack.png",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vite",
-      "React Icons",
-      "React Toastify",
-    ],
+  // {
+  //   id: 4,
+  //   slug: "devstack",
+  //   title: "DevStack",
+  //   category: "React",
+  //   description:
+  //     "DevStack is a web app that helps developers explore and assemble their ideal technology stack. Browse a curated catalog of frontend, backend, database, language, styling, and tooling options, compare key details at a glance, then add favorites to a personal stack that updates instantly and can be refined anytime.",
+  //   image: "/images/projects/devstack.png",
+  //   technologies: [
+  //     "React",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "Vite",
+  //     "React Icons",
+  //     "React Toastify",
+  //   ],
 
-    features: [
-      "Explore different web technologies",
-      "Add technologies to Your Stack with a single click",
-      "Prevent duplicate selections: added technologies show an Added to Stack state and a disabled button",
-      "View the number of selected technologies in Your Stack",
-      "Remove individual technologies from the stack",
-      "Remove all selected technologies at once",
-      "Show toast notifications for adding, removing, and clearing technologies",
-      "Responsive layout for mobile, tablet, and desktop screens",
-    ],
+  //   features: [
+  //     "Explore different web technologies",
+  //     "Add technologies to Your Stack with a single click",
+  //     "Prevent duplicate selections: added technologies show an Added to Stack state and a disabled button",
+  //     "View the number of selected technologies in Your Stack",
+  //     "Remove individual technologies from the stack",
+  //     "Remove all selected technologies at once",
+  //     "Show toast notifications for adding, removing, and clearing technologies",
+  //     "Responsive layout for mobile, tablet, and desktop screens",
+  //   ],
 
-    learned: [
-      "React component architecture",
-      "TypeScript type decalarations",
-      "Reusable UI components",
-      "Building interactive user interfaces",
-      "Lifting and sharing state across sibling components",
-      "Responsive design sense",
-    ],
-    challenges: ["Session handling after social sign-in: fixed by ..."],
-    improvements: ["Add a bookmark feature for saved articles"],
-    github: "https://github.com/HridoyAhmedRafi/DevStack",
-    liveDemo: "https://dev-stack-taupe.vercel.app/",
-  },
+  //   learned: [
+  //     "React component architecture",
+  //     "TypeScript type decalarations",
+  //     "Reusable UI components",
+  //     "Building interactive user interfaces",
+  //     "Lifting and sharing state across sibling components",
+  //     "Responsive design sense",
+  //   ],
+  //   challenges: ["Session handling after social sign-in: fixed by ..."],
+  //   improvements: ["Add a bookmark feature for saved articles"],
+  //   github: "https://github.com/HridoyAhmedRafi/DevStack",
+  //   liveDemo: "https://dev-stack-taupe.vercel.app/",
+  // },
 ];
 
 export const getProjectBySlug = (slug) =>

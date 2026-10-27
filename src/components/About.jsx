@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Compass, Mail, Route } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Reveal from "./Reveal";
 import SectionLink from "./SectionLink";
@@ -9,8 +9,14 @@ import { profile } from "@/data/profile";
 import { skills } from "@/data/skills";
 import { socialLinks } from "@/data/social";
 
+// Icon for each card in aboutContent.details (matched by id)
+const detailIcons = {
+  journey: Route,
+  outside: Compass,
+};
+
 export default function About() {
-  const { showPhoto, intro, extra, projectsBuilt } = aboutContent;
+  const { showPhoto, intro, extra, projectsBuilt, details } = aboutContent;
   const github = socialLinks.find(({ id }) => id === "github");
 
   const initials = profile.name
@@ -22,7 +28,7 @@ export default function About() {
   const stats = [{ value: projectsBuilt, label: "Projects Built" }];
 
   return (
-    <section id="about" className="border-t border-border py-24">
+    <section id="about" className="py-24">
       <div
         className={`mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 ${
           showPhoto ? "lg:grid-cols-2" : ""
@@ -89,7 +95,7 @@ export default function About() {
             {stats.map(({ value, label }, index) => (
               <li key={label} className="min-w-0">
                 <Reveal delay={0.15 + index * 0.05}>
-                  <div className="min-w-36 rounded-xl border border-border bg-card p-4 transition-colors hover:border-accent">
+                  <div className="min-w-[9rem] rounded-xl border border-border bg-card p-4 transition-colors hover:border-accent">
                     <p className="text-3xl font-bold text-accent">{value}</p>
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-muted">
                       {label}
@@ -141,6 +147,46 @@ export default function About() {
             </div>
           </Reveal>
         </div>
+      </div>
+
+      {/* Programming journey, hobbies and interests */}
+      <div className="mx-auto mt-16 max-w-6xl px-6">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {details.map(({ id, title, items }, index) => {
+            const Icon = detailIcons[id] ?? Route;
+            return (
+              <li key={id} className="min-w-0">
+                <Reveal delay={index * 0.08} className="h-full">
+                  <div className="h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent">
+                        <Icon size={20} aria-hidden="true" />
+                      </span>
+                      <h3 className="font-semibold">{title}</h3>
+                    </div>
+
+                    <div className="mt-4 space-y-4">
+                      {items.map(({ label, text }) => (
+                        <div key={text}>
+                          {label && (
+                            <p className="font-mono text-xs uppercase tracking-wider text-accent">
+                              {label}
+                            </p>
+                          )}
+                          <p
+                            className={`${label ? "mt-1" : ""} text-sm leading-relaxed text-muted`}
+                          >
+                            {text}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

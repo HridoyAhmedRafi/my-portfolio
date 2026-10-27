@@ -31,7 +31,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="border-t border-border py-24">
+    <section id="contact" className=" py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="// contact"
@@ -58,7 +58,9 @@ export default function Contact() {
                         <Icon size={20} aria-hidden="true" />
                       </span>
                       <span className="min-w-0">
-                        <span className="block font-mono text-xs text-muted">{label}</span>
+                        <span className="block font-mono text-xs text-muted">
+                          {label}
+                        </span>
                         <span className="block break-all font-medium transition-colors group-hover:text-accent">
                           {display}
                         </span>
@@ -144,7 +146,11 @@ export default function Contact() {
                 {status === "sending" ? "Opening..." : "Send Message"}
               </button>
 
-              <p role="status" aria-live="polite" className="mt-4 text-sm text-muted">
+              <p
+                role="status"
+                aria-live="polite"
+                className="mt-4 text-sm text-muted"
+              >
                 {status === "success" &&
                   "Your email app should open with the message ready to send. If nothing happens, please email me directly."}
                 {status === "error" &&

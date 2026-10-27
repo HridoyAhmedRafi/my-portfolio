@@ -4,7 +4,7 @@ import { skills, tools } from "@/data/skills";
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-border py-24">
+    <section id="skills" className=" py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="// skills"
@@ -36,7 +36,11 @@ export default function Skills() {
             <li key={name}>
               <Reveal delay={index * 0.05}>
                 <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
-                  <Icon size={22} aria-hidden="true" className={`shrink-0 ${color}`} />
+                  <Icon
+                    size={22}
+                    aria-hidden="true"
+                    className={`shrink-0 ${color}`}
+                  />
                   <span className="text-sm font-semibold">{name}</span>
                 </div>
               </Reveal>

@@ -5,24 +5,24 @@
 
 /* Light mode colors */
 :root {
-  --background: #f7f8f5;
-  --foreground: #14161a;
+  --background: #f8fafc;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --border: #e3e6dd;
-  --muted: #5b6270;
-  --accent: #4d7300;
+  --border: #e2e8f0;
+  --muted: #475569;
+  --accent: #2563eb;
   --accent-foreground: #ffffff;
 }
 
-/* Dark mode colors */
+/* Dark mode colors (Dark Blue scheme) */
 .dark {
-  --background: #0c0d10;
-  --foreground: #f2f3f5;
-  --card: #15171d;
-  --border: #222630;
-  --muted: #9aa1af;
-  --accent: #c2f800;
-  --accent-foreground: #0c0d10;
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --border: #334155;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
 }
 
 /* Connect the variables to Tailwind classes (bg-card, text-muted, etc.) */

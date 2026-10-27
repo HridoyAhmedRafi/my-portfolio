@@ -17,12 +17,10 @@ export default function MobileMenu({ isOpen, onClose, links, activeId }) {
 
     document.addEventListener("keydown", handleKeyDown);
     window.addEventListener("resize", handleResize);
-    document.body.style.overflow = "hidden"; // stop page scroll behind the menu
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("resize", handleResize);
-      document.body.style.overflow = "";
     };
   }, [isOpen, onClose]);
 
@@ -35,9 +33,9 @@ export default function MobileMenu({ isOpen, onClose, links, activeId }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-x-0 bottom-0 top-16 z-40 bg-background lg:hidden"
+          className="fixed inset-x-4 top-[5.5rem] z-40 rounded-2xl border border-border bg-card p-2 shadow-xl sm:inset-x-6 lg:hidden"
         >
-          <nav aria-label="Mobile navigation" className="mx-auto max-w-6xl px-6 py-6">
+          <nav aria-label="Mobile navigation">
             <ul className="flex flex-col gap-1">
               {links.map(({ id, label }) => {
                 const isActive = activeId === id;
@@ -47,10 +45,10 @@ export default function MobileMenu({ isOpen, onClose, links, activeId }) {
                       id={id}
                       onClick={onClose}
                       aria-current={isActive ? "location" : undefined}
-                      className={`block rounded-lg px-4 py-3 text-lg font-medium transition-colors ${
+                      className={`block rounded-xl px-4 py-3 text-base font-semibold transition-colors ${
                         isActive
-                          ? "bg-card text-accent"
-                          : "text-foreground hover:bg-card"
+                          ? "bg-background text-accent"
+                          : "text-foreground hover:bg-background"
                       }`}
                     >
                       {label}

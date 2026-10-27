@@ -15,12 +15,20 @@ export default function ThemeToggle() {
       type="button"
       onClick={handleToggle}
       aria-label="Toggle theme"
-      className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-foreground transition-colors hover:border-accent hover:text-accent"
+      className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background transition-colors hover:border-accent"
     >
-      {/* Dark mode: show Sun (click to go light) */}
-      <Sun size={18} className="hidden dark:block" aria-hidden="true" />
-      {/* Light mode: show Moon (click to go dark) */}
-      <Moon size={18} className="block dark:hidden" aria-hidden="true" />
+      {/* Dark mode is on: show the Moon */}
+      <Moon
+        size={18}
+        className="hidden text-accent dark:block"
+        aria-hidden="true"
+      />
+      {/* Light mode is on: show the Sun */}
+      <Sun
+        size={18}
+        className="block text-amber-500 dark:hidden"
+        aria-hidden="true"
+      />
     </button>
   );
 }
