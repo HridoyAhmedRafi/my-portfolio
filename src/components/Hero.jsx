@@ -36,7 +36,10 @@ export default function Hero() {
 };`;
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center pt-16">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center pt-16"
+    >
       <HeroBackground />
 
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-2">
@@ -60,12 +63,15 @@ export default function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-4 min-h-[1.75rem] text-xl font-medium text-muted sm:min-h-[2rem] sm:text-2xl"
+            className="mt-4 min-h-7 text-xl font-medium text-muted sm:min-h-[2rem] sm:text-2xl"
           >
             <TypingText titles={profile.titles} fallback={profile.title} />
           </motion.p>
 
-          <motion.p variants={item} className="mt-6 max-w-xl leading-relaxed text-muted">
+          <motion.p
+            variants={item}
+            className="mt-6 max-w-xl leading-relaxed text-muted"
+          >
             {profile.intro}
           </motion.p>
 
