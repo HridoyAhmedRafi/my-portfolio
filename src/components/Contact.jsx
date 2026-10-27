@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Send } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
-import { socialLinks } from "@/data/social";
+import { contactLinks } from "@/data/social";
 import { sendContactMessage } from "@/lib/contact";
 
 const inputStyles =
@@ -43,11 +43,8 @@ export default function Contact() {
           {/* Contact info */}
           <Reveal className="min-w-0 lg:col-span-2">
             <ul className="space-y-4">
-              {socialLinks.map(({ id, label, href, icon: Icon }) => {
+              {contactLinks.map(({ id, label, href, display, icon: Icon }) => {
                 const isExternal = href.startsWith("http");
-                const displayText = href
-                  .replace("mailto:", "")
-                  .replace("https://", "");
 
                 return (
                   <li key={id}>
@@ -61,11 +58,9 @@ export default function Contact() {
                         <Icon size={20} aria-hidden="true" />
                       </span>
                       <span className="min-w-0">
-                        <span className="block font-mono text-xs text-muted">
-                          {label}
-                        </span>
+                        <span className="block font-mono text-xs text-muted">{label}</span>
                         <span className="block break-all font-medium transition-colors group-hover:text-accent">
-                          {displayText}
+                          {display}
                         </span>
                       </span>
                     </Link>
@@ -149,11 +144,7 @@ export default function Contact() {
                 {status === "sending" ? "Opening..." : "Send Message"}
               </button>
 
-              <p
-                role="status"
-                aria-live="polite"
-                className="mt-4 text-sm text-muted"
-              >
+              <p role="status" aria-live="polite" className="mt-4 text-sm text-muted">
                 {status === "success" &&
                   "Your email app should open with the message ready to send. If nothing happens, please email me directly."}
                 {status === "error" &&

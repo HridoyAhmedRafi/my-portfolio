@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Reveal from "./Reveal";
+import SectionLink from "./SectionLink";
 import { aboutContent } from "@/data/about";
 import { profile } from "@/data/profile";
 import { skills } from "@/data/skills";
@@ -108,7 +109,7 @@ export default function About() {
               {skills.map(({ name }) => (
                 <li
                   key={name}
-                  className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium transition-colors hover:border-accent"
+                  className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent"
                 >
                   {name}
                 </li>
@@ -130,13 +131,13 @@ export default function About() {
                   GitHub
                 </Link>
               )}
-              <Link
-                href="/#contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-colors hover:border-accent hover:text-accent"
+              <SectionLink
+                id="contact"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent"
               >
                 <Mail size={18} aria-hidden="true" />
                 Contact Me
-              </Link>
+              </SectionLink>
             </div>
           </Reveal>
         </div>

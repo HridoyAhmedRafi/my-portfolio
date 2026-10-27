@@ -8,6 +8,8 @@ import { profile } from "@/data/profile";
 import { socialLinks } from "@/data/social";
 import TypingText from "./TypingText";
 import HeroBackground from "./HeroBackground";
+import ResumeButton from "./ResumeButton";
+import SectionLink from "./SectionLink";
 
 const container = {
   hidden: {},
@@ -68,22 +70,23 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/#projects"
+            <SectionLink
+              id="projects"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-accent-foreground transition-transform hover:-translate-y-0.5"
             >
               View Projects
               <ArrowRight size={18} aria-hidden="true" />
-            </Link>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-3 font-medium transition-colors hover:border-accent hover:text-accent"
+            </SectionLink>
+            <ResumeButton />
+            <SectionLink
+              id="contact"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent"
             >
               Contact Me
-            </Link>
+            </SectionLink>
           </motion.div>
 
-          <motion.ul variants={item} className="mt-8 flex gap-3">
+          <motion.ul variants={item} className="mt-10 flex gap-3">
             {socialLinks.map(({ id, label, href, icon: Icon }) => {
               const isExternal = href.startsWith("http");
               return (
@@ -93,7 +96,7 @@ export default function Hero() {
                     aria-label={label}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-card text-muted transition-colors hover:border-accent hover:text-accent"
+                    className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-card text-muted transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent"
                   >
                     <Icon size={20} aria-hidden="true" />
                   </Link>
@@ -143,7 +146,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-card p-4">
+          <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-card p-4 transition-colors duration-300 hover:border-accent">
             <pre className="font-mono text-xs leading-relaxed text-muted sm:text-sm">
               <code>{codeSnippet}</code>
             </pre>

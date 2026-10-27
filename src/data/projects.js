@@ -174,6 +174,8 @@ export const projects = [
       "Lifting and sharing state across sibling components",
       "Responsive design sense",
     ],
+    challenges: ["Session handling after social sign-in: fixed by ..."],
+    improvements: ["Add a bookmark feature for saved articles"],
     github: "https://github.com/HridoyAhmedRafi/DevStack",
     liveDemo: "https://dev-stack-taupe.vercel.app/",
   },

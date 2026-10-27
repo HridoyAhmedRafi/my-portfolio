@@ -6,6 +6,8 @@ import {
   CheckCircle2,
   ExternalLink,
   LayoutTemplate,
+  Lightbulb,
+  Wrench,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Reveal from "@/components/Reveal";
@@ -46,7 +48,9 @@ export default async function ProjectPage({ params }) {
     image,
     features,
     technologies,
-    learned,
+    challenges = [],
+    learned = [],
+    improvements = [],
     github,
     liveDemo,
   } = project;
@@ -55,7 +59,7 @@ export default async function ProjectPage({ params }) {
     <article className="mx-auto max-w-4xl px-6 pb-24 pt-28">
       <Link
         href="/#projects"
-        className="inline-flex items-center gap-2 text-sm text-accent"
+        className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
       >
         <ArrowLeft size={16} aria-hidden="true" />
         Back to projects
@@ -63,10 +67,8 @@ export default async function ProjectPage({ params }) {
 
       {/* Header */}
       <header className="mt-8">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          {title}
-        </h1>
-        <p className="mt-4 max-w-3xl text-md leading-relaxed text-muted">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
           {detailsDescription ?? description}
         </p>
 
@@ -92,9 +94,9 @@ export default async function ProjectPage({ params }) {
         </div>
       </header>
 
-      {/* Large project image */}
+      {/* Large project image with a smooth zoom on hover */}
       <Reveal className="mt-10">
-        <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-card">
+        <div className="group relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-card">
           {image ? (
             <Image
               src={image}
@@ -103,15 +105,11 @@ export default async function ProjectPage({ params }) {
               priority
               quality={95}
               sizes="(min-width: 896px) 896px, 100vw"
-              className="object-cover object-top"
+              className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted">
-              <LayoutTemplate
-                size={40}
-                aria-hidden="true"
-                className="text-accent"
-              />
+              <LayoutTemplate size={40} aria-hidden="true" className="text-accent" />
               <span>Screenshot coming soon</span>
             </div>
           )}
@@ -159,25 +157,73 @@ export default async function ProjectPage({ params }) {
           </section>
         </Reveal>
 
+        {/* Challenges (hidden until you add them in projects.js) */}
+        {challenges.length > 0 && (
+          <Reveal>
+            <section aria-labelledby="challenges-heading">
+              <h2 id="challenges-heading" className="text-2xl font-bold">
+                Challenges
+              </h2>
+              <ul className="mt-5 space-y-3">
+                {challenges.map((item) => (
+                  <li key={item} className="flex gap-3 text-muted">
+                    <Wrench
+                      size={18}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-accent"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </Reveal>
+        )}
+
         {/* What I learned */}
-        <Reveal>
-          <section aria-labelledby="learned-heading">
-            <h2 id="learned-heading" className="text-2xl font-bold">
-              What I Learned
-            </h2>
-            <ul className="mt-5 space-y-3">
-              {learned.map((item) => (
-                <li key={item} className="flex gap-3 text-muted">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-        </Reveal>
+        {learned.length > 0 && (
+          <Reveal>
+            <section aria-labelledby="learned-heading">
+              <h2 id="learned-heading" className="text-2xl font-bold">
+                What I Learned
+              </h2>
+              <ul className="mt-5 space-y-3">
+                {learned.map((item) => (
+                  <li key={item} className="flex gap-3 text-muted">
+                    <span
+                      aria-hidden="true"
+                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </Reveal>
+        )}
+
+        {/* Future plans (hidden until you add them in projects.js) */}
+        {improvements.length > 0 && (
+          <Reveal>
+            <section aria-labelledby="improvements-heading">
+              <h2 id="improvements-heading" className="text-2xl font-bold">
+                Future Plans
+              </h2>
+              <ul className="mt-5 space-y-3">
+                {improvements.map((item) => (
+                  <li key={item} className="flex gap-3 text-muted">
+                    <Lightbulb
+                      size={18}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-accent"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </Reveal>
+        )}
       </div>
     </article>
   );

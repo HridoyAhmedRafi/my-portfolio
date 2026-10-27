@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/navigation";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
+import SectionLink from "./SectionLink";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -71,13 +71,13 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
-          <Link
-            href="/#home"
+          <SectionLink
+            id="home"
             onClick={closeMenu}
             className="text-lg font-bold tracking-tight"
           >
             Hridoy<span className="text-accent">.</span>
-          </Link>
+          </SectionLink>
 
           {/* Desktop navigation */}
           <nav aria-label="Main navigation" className="hidden lg:block">
@@ -86,15 +86,15 @@ export default function Navbar() {
                 const isActive = currentId === id;
                 return (
                   <li key={id} className="relative">
-                    <Link
-                      href={`/#${id}`}
+                    <SectionLink
+                      id={id}
                       aria-current={isActive ? "location" : undefined}
                       className={`block px-3 py-2 text-sm font-medium transition-colors hover:text-accent ${
                         isActive ? "text-accent" : "text-muted"
                       }`}
                     >
                       {label}
-                    </Link>
+                    </SectionLink>
                     {isActive && (
                       <motion.span
                         layoutId="nav-active-indicator"

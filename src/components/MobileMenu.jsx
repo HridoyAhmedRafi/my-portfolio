@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import SectionLink from "./SectionLink";
 
 export default function MobileMenu({ isOpen, onClose, links, activeId }) {
   useEffect(() => {
@@ -37,17 +37,14 @@ export default function MobileMenu({ isOpen, onClose, links, activeId }) {
           transition={{ duration: 0.2 }}
           className="fixed inset-x-0 bottom-0 top-16 z-40 bg-background lg:hidden"
         >
-          <nav
-            aria-label="Mobile navigation"
-            className="mx-auto max-w-6xl px-6 py-6"
-          >
+          <nav aria-label="Mobile navigation" className="mx-auto max-w-6xl px-6 py-6">
             <ul className="flex flex-col gap-1">
               {links.map(({ id, label }) => {
                 const isActive = activeId === id;
                 return (
                   <li key={id}>
-                    <Link
-                      href={`/#${id}`}
+                    <SectionLink
+                      id={id}
                       onClick={onClose}
                       aria-current={isActive ? "location" : undefined}
                       className={`block rounded-lg px-4 py-3 text-lg font-medium transition-colors ${
@@ -57,7 +54,7 @@ export default function MobileMenu({ isOpen, onClose, links, activeId }) {
                       }`}
                     >
                       {label}
-                    </Link>
+                    </SectionLink>
                   </li>
                 );
               })}
