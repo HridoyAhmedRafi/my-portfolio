@@ -63,7 +63,7 @@ export default function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-4 min-h-7 text-xl font-medium text-muted sm:min-h-[2rem] sm:text-2xl"
+            className="mt-4 min-h-7 text-xl font-medium text-muted sm:min-h-8 sm:text-2xl"
           >
             <TypingText titles={profile.titles} fallback={profile.title} />
           </motion.p>
