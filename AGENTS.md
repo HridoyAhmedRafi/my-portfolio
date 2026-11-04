@@ -14,13 +14,14 @@ Personal portfolio: a static single-page site plus project detail pages. Next.js
 
 - `src/app/page.js` composes Hero/About/Skills/Projects/Contact. `src/app/layout.js` owns fonts, metadata, Navbar/Footer, and ThemeProvider.
 - `src/data/*.js` is the content layer (profile, social, navigation, about, skills, projects). Edit copy and links there rather than hardcoding them in components.
-- `src/data/projects.js` feeds both the home grid and `/projects/[slug]`. Each entry needs `slug`, `features`, `technologies`, and `learned` — the detail page maps them without guards — plus an `image` path under `public/images/projects/`. `generateStaticParams` pre-renders from this array, so adding a project needs no route changes.
+- `src/data/projects.js` feeds both the home grid and `/projects/[slug]`. `generateStaticParams` pre-renders from this array, so adding a project needs no route changes. Per entry: `slug`, `title`, `description`, `features`, `technologies`, `github`, and `liveDemo` are required (the detail page uses them unguarded — `github`/`liveDemo` go straight into `Link href`). `image`, `detailsDescription`, `challenges`, `learned`, and `improvements` are optional (guarded or defaulted). One entry (`devstack`) is fully commented out and inactive.
 - Imports use the `@/*` → `src/*` alias from `jsconfig.json`.
 - Contact has no backend: `src/lib/contact.js` builds a `mailto:` URL. To add a real endpoint, change only that function.
 
 ## Conventions and gotchas
 
 - Plain JavaScript, no TypeScript. `.jsx` for JSX components, `.js` for data/routes.
+- `src/app/page.js` has an unused `Footer` import — `layout.js` renders the Footer. Don't "fix" the import by rendering `<Footer />` in the page; it would double-render.
 - Dynamic route `params` are async in Next 16: `const { slug } = await params` in both `generateMetadata` and the page.
 - Tailwind v4 is CSS-first; there is no `tailwind.config`. Theme tokens live in `src/app/globals.css` under `@theme inline`. Use semantic utilities (`bg-card`, `text-muted`, `border-border`, `bg-accent`, `text-accent-foreground`) instead of raw palette colors.
 - Dark mode is class-based (`@custom-variant dark`) via next-themes; default is dark and system detection is disabled. `<html suppressHydrationWarning>` is intentional.

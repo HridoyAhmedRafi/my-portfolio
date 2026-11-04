@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { profile } from "./profile";
 
@@ -38,18 +38,11 @@ const items = {
     display: profile.email,
     icon: Mail,
   },
-  phone: {
-    id: "phone",
-    label: "Phone",
-    href: profile.phone ? `tel:${profile.phone.replace(/\s/g, "")}` : "",
-    display: profile.phone,
-    icon: Phone,
-  },
   whatsapp: {
     id: "whatsapp",
     label: "WhatsApp",
+    // No `display` on purpose: the number must never be rendered.
     href: profile.whatsapp ? `https://wa.me/${digitsOnly(profile.whatsapp)}` : "",
-    display: profile.whatsapp,
     icon: FaWhatsapp,
   },
 };
@@ -57,7 +50,7 @@ const items = {
 const pick = (...ids) => ids.map((id) => items[id]).filter(({ href }) => href);
 
 // Icons in the hero (and footer)
-export const socialLinks = pick("github", "linkedin", "facebook", "email");
+export const socialLinks = pick("github", "linkedin", "facebook");
 
-// Cards in the contact section
-export const contactLinks = pick("email", "phone", "whatsapp", "github", "linkedin", "facebook"); 
+// Cards in the contact section: direct contact channels only
+export const contactLinks = pick("email", "whatsapp");

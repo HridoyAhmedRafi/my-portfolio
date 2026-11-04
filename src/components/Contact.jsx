@@ -58,12 +58,20 @@ export default function Contact() {
                         <Icon size={20} aria-hidden="true" />
                       </span>
                       <span className="min-w-0">
-                        <span className="block font-mono text-xs text-muted">
-                          {label}
-                        </span>
-                        <span className="block break-all font-medium transition-colors group-hover:text-accent">
-                          {display}
-                        </span>
+                        {display ? (
+                          <>
+                            <span className="block font-mono text-xs text-muted">
+                              {label}
+                            </span>
+                            <span className="block break-all font-medium transition-colors group-hover:text-accent">
+                              {display}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="block font-medium transition-colors group-hover:text-accent">
+                            {label}
+                          </span>
+                        )}
                       </span>
                     </Link>
                   </li>
