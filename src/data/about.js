@@ -6,7 +6,7 @@ export const aboutContent = {
     before: "I am a passionate ",
     highlight: "Full Stack Developer",
     after:
-      " dedicated to building modern, responsive and user-friendly web applications.",
+      " Dedicated to building modern, scalable, secure, and user-friendly web applications.",
   },
   extra:
     "I enjoy combining creativity, logic and problem-solving.",
