@@ -5,6 +5,7 @@ export default function HeroBackground() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
       <div className="hero-dots" />
+      <div className="hero-glow" />
     </div>
   );
 }

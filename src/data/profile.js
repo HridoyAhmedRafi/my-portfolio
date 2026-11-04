@@ -14,6 +14,7 @@ export const profile = {
   phone: "+8801339528738",
   whatsapp: "+8801339528738",
   location: "Brahmanbaria, Chattogram, Bangladesh",
+  availability: "Available for work",
   resume: null, // e.g. "/resume.pdf" (file goes in the public folder)
   // Put your photo in public/images/ and write the path here, e.g. "/images/profile.jpg"
   image: "/images/profilePicture.jpg",

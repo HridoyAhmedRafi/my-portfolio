@@ -50,8 +50,20 @@ export default function Hero() {
           animate="show"
           className="order-2 min-w-0 lg:order-1"
         >
-          <motion.p variants={item} className="font-mono text-sm text-accent">
-            Hi, I&apos;m
+          <motion.p
+            variants={item}
+            className="flex flex-wrap items-center gap-3 font-mono text-sm text-accent-text"
+          >
+            <span>Hi, I&apos;m</span>
+            {profile.availability && (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-muted">
+                <span
+                  className="h-1.5 w-1.5 shrink-0 rounded-full bg-highlight"
+                  aria-hidden="true"
+                />
+                {profile.availability}
+              </span>
+            )}
           </motion.p>
 
           <motion.h1
@@ -86,7 +98,7 @@ export default function Hero() {
             <ResumeButton />
             <SectionLink
               id="contact"
-              className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text"
             >
               Contact Me
             </SectionLink>

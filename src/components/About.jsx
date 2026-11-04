@@ -95,7 +95,7 @@ export default function About() {
             {stats.map(({ value, label }, index) => (
               <li key={label} className="min-w-0">
                 <Reveal delay={0.15 + index * 0.05}>
-                  <div className="min-w-[9rem] rounded-xl border border-border bg-card p-4 transition-colors hover:border-accent">
+                  <div className="min-w-[9rem] rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
                     <p className="text-3xl font-bold text-accent">{value}</p>
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-muted">
                       {label}
@@ -115,7 +115,7 @@ export default function About() {
               {skills.map(({ name }) => (
                 <li
                   key={name}
-                  className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent"
+                  className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-foreground"
                 >
                   {name}
                 </li>
@@ -139,7 +139,7 @@ export default function About() {
               )}
               <SectionLink
                 id="contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text"
               >
                 <Mail size={18} aria-hidden="true" />
                 Contact Me
@@ -169,7 +169,7 @@ export default function About() {
                       {items.map(({ label, text }) => (
                         <div key={text}>
                           {label && (
-                            <p className="font-mono text-xs uppercase tracking-wider text-accent">
+                            <p className="font-mono text-xs uppercase tracking-wider text-accent-text">
                               {label}
                             </p>
                           )}

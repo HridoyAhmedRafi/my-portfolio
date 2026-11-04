@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }) {
     <article className="mx-auto max-w-4xl px-6 pb-24 pt-28">
       <Link
         href="/#projects"
-        className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+        className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent-text"
       >
         <ArrowLeft size={16} aria-hidden="true" />
         Back to projects
@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }) {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-colors hover:border-accent hover:text-accent-text"
           >
             <FaGithub size={18} aria-hidden="true" />
             GitHub
@@ -148,7 +148,7 @@ export default async function ProjectPage({ params }) {
               {technologies.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-lg border border-border bg-card px-3 py-1.5 font-mono text-sm text-muted transition-colors hover:border-accent hover:text-foreground"
+                  className="rounded-lg border border-border bg-card px-3 py-1.5 font-mono text-sm text-muted transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-foreground"
                 >
                   {tech}
                 </li>

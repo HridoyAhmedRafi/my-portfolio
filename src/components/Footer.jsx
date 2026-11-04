@@ -28,19 +28,19 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#3a3d45] bg-[#020618]">
+    <footer className="border-t border-border bg-footer">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           {/* Brand */}
           <div className="text-center md:text-left">
             <Link
               href="#home"
-              className="font-mono text-xl font-bold tracking-tight text-white transition-colors hover:text-accent"
+              className="font-mono text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent-text"
             >
-              HRIDOY<span className="text-accent">.</span>
+              HRIDOY<span className="text-accent-text">.</span>
             </Link>
 
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="mt-2 text-sm text-muted">
               Full Stack Developer • Building Modern Web Experiences
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm text-slate-400 transition-colors hover:text-accent"
+                    className="text-sm text-muted transition-colors hover:text-accent-text"
                   >
                     {label}
                   </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#3a3d45] bg-[#15171D] text-slate-400 transition-colors hover:border-accent hover:text-accent"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted transition-colors hover:border-accent hover:text-accent-text"
               >
                 <Icon size={18} aria-hidden="true" />
               </Link>
@@ -79,12 +79,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[#3a3d45] pt-6 text-center text-sm text-slate-400 sm:flex-row sm:text-left">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-center text-sm text-muted sm:flex-row sm:text-left">
           <p>© {new Date().getFullYear()} Hridoy. All rights reserved.</p>
 
           <p className="text-[13px]">
-            BUILD WITH <span className="text-accent">♥</span> BY{" "}
-            <span className="text-white font-bold">HRIDOY</span>
+            BUILD WITH <span className="text-accent-text">♥</span> BY{" "}
+            <span className="font-bold text-foreground">HRIDOY</span>
           </p>
         </div>
       </div>

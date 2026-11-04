@@ -107,7 +107,7 @@ export default function Contact() {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="min-w-0 flex-1 text-sm font-medium text-accent transition-colors hover:text-accent/80 sm:text-base"
+                            className="min-w-0 flex-1 text-sm font-medium text-accent-text transition-colors hover:text-accent-text/80 sm:text-base"
                           >
                             {label}
                           </a>
@@ -146,7 +146,7 @@ export default function Contact() {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="shrink-0 font-mono text-sm font-medium text-accent transition-colors hover:text-accent/80"
+                            className="shrink-0 font-mono text-sm font-medium text-accent-text transition-colors hover:text-accent-text/80"
                           >
                             Chat
                           </a>

@@ -86,8 +86,8 @@ export default function Navbar() {
                     <SectionLink
                       id={id}
                       aria-current={isActive ? "location" : undefined}
-                      className={`block px-4 py-2 text-sm font-semibold transition-colors hover:text-accent ${
-                        isActive ? "text-accent" : "text-foreground"
+                      className={`block px-4 py-2 text-sm font-semibold transition-colors hover:text-accent-text ${
+                        isActive ? "text-accent-text" : "text-foreground"
                       }`}
                     >
                       {label}

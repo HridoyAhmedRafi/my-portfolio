@@ -43,7 +43,7 @@ export default function ProjectCard({ project }) {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent-text"
           >
             <FaGithub size={16} aria-hidden="true" />
             GitHub
@@ -52,7 +52,7 @@ export default function ProjectCard({ project }) {
             href={liveDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent-text"
           >
             <ExternalLink size={16} aria-hidden="true" />
             Live Demo

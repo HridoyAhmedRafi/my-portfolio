@@ -6,7 +6,7 @@ import { Download } from "lucide-react";
 import { profile } from "@/data/profile";
 
 const styles =
-  "cursor-pointer inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent";
+  "cursor-pointer inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text";
 
 export default function ResumeButton() {
   const [showNote, setShowNote] = useState(false);

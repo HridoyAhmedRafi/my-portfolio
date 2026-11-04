@@ -47,7 +47,7 @@ export default function MobileMenu({ isOpen, onClose, links, activeId }) {
                       aria-current={isActive ? "location" : undefined}
                       className={`block rounded-xl px-4 py-3 text-base font-semibold transition-colors ${
                         isActive
-                          ? "bg-background text-accent"
+                          ? "bg-background text-accent-text"
                           : "text-foreground hover:bg-background"
                       }`}
                     >

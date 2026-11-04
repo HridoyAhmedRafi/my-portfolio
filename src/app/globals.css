@@ -5,13 +5,18 @@
 
 /* Light mode colors */
 :root {
-  --background: #f8fafc;
+  --background: #f1f5f9;
   --foreground: #0f172a;
   --card: #ffffff;
   --border: #e2e8f0;
   --muted: #475569;
   --accent: #2563eb;
   --accent-foreground: #ffffff;
+  /* Accent used for text: darker in light mode, lighter in dark mode */
+  --accent-text: #1d4ed8;
+  /* Secondary accent, reserved for status details */
+  --highlight: #0d9488;
+  --footer: #ffffff;
 }
 
 /* Dark mode colors (Dark Blue scheme) */
@@ -23,6 +28,9 @@
   --muted: #94a3b8;
   --accent: #3b82f6;
   --accent-foreground: #ffffff;
+  --accent-text: #60a5fa;
+  --highlight: #2dd4bf;
+  --footer: #0b1120;
 }
 
 /* Connect the variables to Tailwind classes (bg-card, text-muted, etc.) */
@@ -34,6 +42,9 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-text: var(--accent-text);
+  --color-highlight: var(--highlight);
+  --color-footer: var(--footer);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -100,6 +111,27 @@ body {
   background-size: 28px 28px;
   -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 85%);
   mask-image: radial-gradient(ellipse at center, #000 35%, transparent 85%);
+}
+
+/* Soft accent glow behind the hero content */
+.hero-glow {
+  position: absolute;
+  top: -12rem;
+  right: -8rem;
+  height: 36rem;
+  width: 36rem;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 24%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(48px);
+  opacity: 0.35;
+}
+
+.dark .hero-glow {
+  opacity: 0.55;
 }
 
 @media (prefers-reduced-motion: reduce) {
