@@ -15,7 +15,9 @@
   /* Accent used for text: darker in light mode, lighter in dark mode */
   --accent-text: #1d4ed8;
   /* Secondary accent, reserved for status details */
-  --highlight: #0d9488;
+  --highlight: #0f766e;
+  /* Elevated surface, one step above cards */
+  --elevated: #ffffff;
   --footer: #ffffff;
 }
 
@@ -30,6 +32,7 @@
   --accent-foreground: #ffffff;
   --accent-text: #60a5fa;
   --highlight: #2dd4bf;
+  --elevated: #263449;
   --footer: #0b1120;
 }
 
@@ -44,6 +47,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-text: var(--accent-text);
   --color-highlight: var(--highlight);
+  --color-elevated: var(--elevated);
   --color-footer: var(--footer);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);

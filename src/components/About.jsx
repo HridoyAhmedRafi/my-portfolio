@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Compass, Mail, Route } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import SectionLink from "./SectionLink";
 import { aboutContent } from "@/data/about";
 import { profile } from "@/data/profile";
@@ -69,25 +70,17 @@ export default function About() {
 
         {/* Content */}
         <div className="min-w-0">
-          <Reveal>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              About Me
-            </h2>
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-1 w-14 rounded-full bg-accent"
-            />
-          </Reveal>
+          <SectionHeading eyebrow="01 — ABOUT" title="About Me" />
 
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-xl leading-relaxed text-muted">
+            <p className="mt-6 max-w-xl text-pretty leading-relaxed text-muted">
               {intro.before}
               <strong className="font-semibold text-foreground underline decoration-accent decoration-2 underline-offset-4">
                 {intro.highlight}
               </strong>
               {intro.after}
             </p>
-            <p className="mt-3 max-w-xl leading-relaxed text-muted">{extra}</p>
+            <p className="mt-3 max-w-xl text-pretty leading-relaxed text-muted">{extra}</p>
           </Reveal>
 
           {/* Stats */}
@@ -95,8 +88,8 @@ export default function About() {
             {stats.map(({ value, label }, index) => (
               <li key={label} className="min-w-0">
                 <Reveal delay={0.15 + index * 0.05}>
-                  <div className="min-w-[9rem] rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
-                    <p className="text-3xl font-bold text-accent">{value}</p>
+                  <div className="min-w-[9rem] rounded-xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
+                    <p className="text-3xl font-bold tabular-nums text-highlight">{value}</p>
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-muted">
                       {label}
                     </p>
@@ -157,7 +150,7 @@ export default function About() {
             return (
               <li key={id} className="min-w-0">
                 <Reveal delay={index * 0.08} className="h-full">
-                  <div className="h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
+                  <div className="h-full rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
                     <div className="flex items-center gap-3">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent">
                         <Icon size={20} aria-hidden="true" />

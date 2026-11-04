@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <Link
               href="#home"
-              className="font-mono text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent-text"
+              className="font-mono text-lg font-bold uppercase tracking-tight text-foreground transition-colors hover:text-accent-text"
             >
               HRIDOY<span className="text-accent-text">.</span>
             </Link>

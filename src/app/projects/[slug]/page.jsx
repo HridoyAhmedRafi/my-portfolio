@@ -67,8 +67,8 @@ export default async function ProjectPage({ params }) {
 
       {/* Header */}
       <header className="mt-8">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+        <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
+        <p className="mt-4 max-w-3xl text-pretty text-lg leading-relaxed text-muted">
           {detailsDescription ?? description}
         </p>
 

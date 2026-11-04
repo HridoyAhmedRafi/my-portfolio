@@ -72,7 +72,7 @@ export default function Contact() {
     <section id="contact" className=" py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="// contact"
+          eyebrow="04 — CONTACT"
           title="Get In Touch"
           description="Have a question, an opportunity, or just want to say hi? Send me a message and I will get back to you."
         />
@@ -80,11 +80,11 @@ export default function Contact() {
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2">
           {/* Contact info */}
           <Reveal className="min-w-0">
-            <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8 dark:shadow-none">
               <h3 className="text-2xl font-bold tracking-tight">
                 Let&apos;s connect
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+              <p className="mt-3 text-pretty text-sm leading-relaxed text-muted sm:text-base">
                 I&apos;m open to full-time roles, freelance work, and
                 interesting collaborations. Pick whichever channel works best
                 for you.
@@ -131,12 +131,20 @@ export default function Contact() {
                                 ? `${label} copied`
                                 : `Copy ${label.toLowerCase()}`
                             }
-                            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted transition-colors hover:border-accent hover:text-accent"
+                            className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted transition-colors hover:border-accent hover:text-accent"
                           >
                             {copied === id ? (
                               <Check size={16} aria-hidden="true" />
                             ) : (
                               <Copy size={16} aria-hidden="true" />
+                            )}
+                            {copied === id && (
+                              <span
+                                aria-hidden="true"
+                                className="pointer-events-none absolute -top-9 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 font-mono text-[10px] font-medium text-background shadow-sm"
+                              >
+                                Copied!
+                              </span>
                             )}
                           </button>
                         )}
@@ -167,7 +175,7 @@ export default function Contact() {
           <Reveal delay={0.1} className="min-w-0">
             <form
               onSubmit={handleSubmit}
-              className="rounded-xl border border-border bg-card p-6 sm:p-8"
+              className="rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8 dark:shadow-none"
             >
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>

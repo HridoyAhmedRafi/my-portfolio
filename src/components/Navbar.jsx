@@ -71,9 +71,9 @@ export default function Navbar() {
           <SectionLink
             id="home"
             onClick={closeMenu}
-            className="justify-self-start text-xl font-extrabold uppercase tracking-tight text-accent"
+            className="justify-self-start font-mono text-lg font-bold uppercase tracking-tight text-foreground"
           >
-            Hridoy.
+            HRIDOY<span className="text-accent-text">.</span>
           </SectionLink>
 
           {/* Desktop navigation (centered) */}

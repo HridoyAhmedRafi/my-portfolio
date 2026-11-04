@@ -56,7 +56,7 @@ export default function Hero() {
           >
             <span>Hi, I&apos;m</span>
             {profile.availability && (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-muted">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-highlight">
                 <span
                   className="h-1.5 w-1.5 shrink-0 rounded-full bg-highlight"
                   aria-hidden="true"
@@ -68,7 +68,7 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+            className="mt-3 text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
           >
             {profile.name}
           </motion.h1>
@@ -82,7 +82,7 @@ export default function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl leading-relaxed text-muted"
+            className="mt-6 max-w-xl text-pretty leading-relaxed text-muted"
           >
             {profile.intro}
           </motion.p>
@@ -164,7 +164,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-card p-4 transition-colors duration-300 hover:border-accent">
+          <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-card p-4 shadow-sm transition-colors duration-300 hover:border-accent dark:shadow-none">
             <pre className="font-mono text-xs leading-relaxed text-muted sm:text-sm">
               <code>{codeSnippet}</code>
             </pre>

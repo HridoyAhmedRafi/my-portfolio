@@ -8,7 +8,7 @@ export default function Projects() {
     <section id="projects" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="// projects"
+          eyebrow="03 — PROJECTS"
           title="My Projects"
           description="Projects I have built while learning modern web development."
         />

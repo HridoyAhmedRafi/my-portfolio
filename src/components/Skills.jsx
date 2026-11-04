@@ -7,7 +7,7 @@ export default function Skills() {
     <section id="skills" className=" py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="// skills"
+          eyebrow="02 — SKILLS"
           title="My Skills"
           description="Technologies I have learned and use to build web applications."
         />
@@ -17,7 +17,7 @@ export default function Skills() {
           {skills.map(({ name, icon: Icon, color }, index) => (
             <li key={name} className="min-w-0">
               <Reveal delay={index * 0.05} className="h-full">
-                <div className="group flex h-full flex-col items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-2 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent">
+                <div className="group flex h-full flex-col items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-2 py-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
                   <Icon
                     size={28}
                     aria-hidden="true"
@@ -39,7 +39,7 @@ export default function Skills() {
           {tools.map(({ name, icon: Icon, color }, index) => (
             <li key={name}>
               <Reveal delay={index * 0.05}>
-                <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
+                <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
                   <Icon
                     size={22}
                     aria-hidden="true"
