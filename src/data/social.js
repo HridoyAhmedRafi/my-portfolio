@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { profile } from "./profile";
 
@@ -31,20 +31,6 @@ const items = {
     display: cleanUrl(FACEBOOK_URL),
     icon: FaFacebook,
   },
-  email: {
-    id: "email",
-    label: "Email",
-    href: profile.email ? `mailto:${profile.email}` : "",
-    display: profile.email,
-    icon: Mail,
-  },
-  whatsapp: {
-    id: "whatsapp",
-    label: "WhatsApp",
-    // No `display` on purpose: the number must never be rendered.
-    href: profile.whatsapp ? `https://wa.me/${digitsOnly(profile.whatsapp)}` : "",
-    icon: FaWhatsapp,
-  },
 };
 
 const pick = (...ids) => ids.map((id) => items[id]).filter(({ href }) => href);
@@ -52,5 +38,32 @@ const pick = (...ids) => ids.map((id) => items[id]).filter(({ href }) => href);
 // Icons in the hero (and footer)
 export const socialLinks = pick("github", "linkedin", "facebook");
 
-// Cards in the contact section: direct contact channels only
-export const contactLinks = pick("email", "whatsapp");
+const whatsappHref = profile.whatsapp
+  ? `https://wa.me/${digitsOnly(profile.whatsapp)}`
+  : "";
+
+// Cards in the contact section: direct contact channels + location.
+// `action` tells the Contact component which control to render on the right.
+export const contactCards = [
+  profile.email && {
+    id: "email",
+    label: "Email",
+    value: profile.email,
+    icon: Mail,
+    action: "copy",
+  },
+  profile.whatsapp && {
+    id: "whatsapp",
+    label: "WhatsApp",
+    // The number stays hidden; the whole card links to the chat.
+    href: whatsappHref,
+    icon: FaWhatsapp,
+    action: "chat",
+  },
+  profile.location && {
+    id: "location",
+    label: "Location",
+    value: profile.location,
+    icon: MapPin,
+  },
+].filter(Boolean);
