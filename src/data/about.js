@@ -9,7 +9,7 @@ export const aboutContent = {
       " dedicated to building modern, responsive and user-friendly web applications.",
   },
   extra:
-    "I enjoy combining creativity, logic and problem-solving, and I am now growing into backend development with Node.js and Express.js.",
+    "I enjoy combining creativity, logic and problem-solving.",
   details: [
     {
       id: "journey",
