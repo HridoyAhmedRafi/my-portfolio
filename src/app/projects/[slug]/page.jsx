@@ -67,8 +67,10 @@ export default async function ProjectPage({ params }) {
 
       {/* Header */}
       <header className="mt-8">
-        <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
-        <p className="mt-4 max-w-3xl text-pretty text-lg leading-relaxed text-muted">
+        <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          {title}
+        </h1>
+        <p className="mt-4 max-w-3xl text-pretty text-md leading-relaxed text-muted">
           {detailsDescription ?? description}
         </p>
 
@@ -109,7 +111,11 @@ export default async function ProjectPage({ params }) {
             />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted">
-              <LayoutTemplate size={40} aria-hidden="true" className="text-accent" />
+              <LayoutTemplate
+                size={40}
+                aria-hidden="true"
+                className="text-accent"
+              />
               <span>Screenshot coming soon</span>
             </div>
           )}
@@ -171,28 +177,6 @@ export default async function ProjectPage({ params }) {
                       size={18}
                       aria-hidden="true"
                       className="mt-0.5 shrink-0 text-accent"
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </Reveal>
-        )}
-
-        {/* What I learned */}
-        {learned.length > 0 && (
-          <Reveal>
-            <section aria-labelledby="learned-heading">
-              <h2 id="learned-heading" className="text-2xl font-bold">
-                What I Learned
-              </h2>
-              <ul className="mt-5 space-y-3">
-                {learned.map((item) => (
-                  <li key={item} className="flex gap-3 text-muted">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
                     />
                     {item}
                   </li>

@@ -90,7 +90,7 @@ export default function Hero() {
           <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
             <SectionLink
               id="projects"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-accent-foreground transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-medium text-accent-foreground transition-transform hover:-translate-y-0.5"
             >
               View Projects
               <ArrowRight size={18} aria-hidden="true" />
@@ -98,7 +98,7 @@ export default function Hero() {
             <ResumeButton />
             <SectionLink
               id="contact"
-              className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text"
+              className="inline-flex items-center rounded-full border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text"
             >
               Contact Me
             </SectionLink>

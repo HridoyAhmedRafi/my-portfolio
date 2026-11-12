@@ -14,7 +14,6 @@ import { Braces } from "lucide-react";
 // `color` is a Tailwind text color class for the icon (it also controls light/dark mode).
 export const skills = [
   { name: "JavaScript", icon: FaJs, color: "text-[#d4b200] dark:text-[#f7df1e]" },
-  { name: "ES6+", icon: Braces, color: "text-accent" },
   { name: "TypeScript", icon: SiTypescript, color: "text-[#3178c6]" },
   { name: "React.js", icon: FaReact, color: "text-[#087ea4] dark:text-[#61dafb]" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },

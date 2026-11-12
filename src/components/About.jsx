@@ -80,7 +80,9 @@ export default function About() {
               </strong>
               {intro.after}
             </p>
-            <p className="mt-3 max-w-xl text-pretty leading-relaxed text-muted">{extra}</p>
+            <p className="mt-3 max-w-xl text-pretty leading-relaxed text-muted">
+              {extra}
+            </p>
           </Reveal>
 
           {/* Stats */}
@@ -88,8 +90,10 @@ export default function About() {
             {stats.map(({ value, label }, index) => (
               <li key={label} className="min-w-0">
                 <Reveal delay={0.15 + index * 0.05}>
-                  <div className="min-w-[9rem] rounded-xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
-                    <p className="text-3xl font-bold tabular-nums text-highlight">{value}</p>
+                  <div className="min-w-36 rounded-xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
+                    <p className="text-3xl font-bold tabular-nums text-highlight">
+                      {value}
+                    </p>
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-muted">
                       {label}
                     </p>
@@ -124,7 +128,7 @@ export default function About() {
                   href={github.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-accent-foreground transition-transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-medium text-accent-foreground transition-transform hover:-translate-y-0.5"
                 >
                   <FaGithub size={18} aria-hidden="true" />
                   GitHub
@@ -132,7 +136,7 @@ export default function About() {
               )}
               <SectionLink
                 id="contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent-text"
               >
                 <Mail size={18} aria-hidden="true" />
                 Contact Me

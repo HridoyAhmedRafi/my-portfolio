@@ -1,16 +1,83 @@
 export const projects = [
+
   {
     id: 1,
+    slug: "studio-space",
+    title: "StudioSpace",
+    category: "Full-Stack Marketplace & Booking",
+
+    description:
+      "StudioSpace is a full-stack marketplace where creators discover production-ready spaces (photo studios, sound stages, podcast rooms, music suites, and art workshops) and book them by the hour. Hosts can list and manage their own studios, while creators track every booking request from a personal dashboard.",
+
+    image: "/images/projects/studio-space.png",
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Better Auth",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Google OAuth",
+      "JWT",
+      "Lucide React",
+      "React Hot Toast",
+    ],
+
+    features: [
+      "Browse creative studios across multiple categories",
+      "View detailed studio information",
+      "User registration and sign-in",
+      "Email and password authentication",
+      "Google social sign-in",
+      "Create new studio listings",
+      "Edit and delete personal studio listings",
+      "Owner-only studio management",
+      "Book studios through an interactive booking modal",
+      "Select booking dates and preferred time slots",
+      "Cancel pending bookings",
+      "View and manage personal bookings",
+      "Responsive desktop, tablet, and mobile layouts",
+      "Light and dark theme toggle",
+      "Toast notifications for user feedback",
+    ],
+
+    challenges: [
+      "Implementing JWT Plugin",
+      "Protecting private routes and securing backend mutation operations",
+      "Preventing double bookings by detecting overlapping time slots for the same studio and date",
+      "Ensuring cancelled bookings do not block future reservations",
+      "Managing booking statuses and restricting cancellation to pending bookings",
+      "Synchronizing frontend booking operations with backend database records",
+      "Handling authentication and authorization across frontend and backend",
+    ],
+
+    improvements: [
+      "Integrate an online payment gateway for booking transactions",
+      "Add a wishlist feature to save favorite studios",
+      "Implement a studio review and rating system",
+      "Introduce an in-app messaging system between creators and studio owners",
+    ],
+
+    github: "https://github.com/HridoyAhmedRafi/studio-space",
+    liveDemo: "https://studio-space-three.vercel.app",
+  },
+
+
+
+  {
+    id: 2,
     slug: "bangla-news-24",
     title: "Bangla News 24",
     category: "Next.js & Authentication",
     description:
       "Bangla News 24 is a modern Bengali news web application designed to help users stay updated with the latest news. It features organized news sections, live news indicators, and a user-friendly interface. The platform also includes secure authentication, session management, and profile management, allowing users to update their personal information.",
-    // After adding a screenshot, write its path here, e.g. "/images/projects/bangla-news-24.png"
+
     image: "/images/projects/bangla-news-24.png",
     technologies: [
       "Next.js",
-      "React",
       "TypeScript",
       "Tailwind CSS",
       "daisyUI",
@@ -35,16 +102,7 @@ export const projects = [
       "Responsive desktop and mobile layouts",
     ],
 
-    learned: [
-      "Next.js App Router and dynamic routing",
-      "React component architecture with TypeScript",
-      "API data fetching and dynamic data rendering",
-      "Email/password and OAuth (Google, GitHub) authentication",
-      "Authentication session management and user profile updates",
-      "MongoDB integration",
-      "Responsive UI and reusable components",
-      "Toast notifications and user feedback",
-    ],
+
     challenges: [
       "Configuring OAuth redirect URLs for social sign-in in production",
       "Separating sign-up and sign-in flows by disabling automatic sign-in after registration",
@@ -59,56 +117,6 @@ export const projects = [
     github: "https://github.com/HridoyAhmedRafi/bangla-news-24",
     liveDemo: "https://bangla-news-24-teal.vercel.app/",
   },
-  {
-    id: 2,
-    slug: "fitlog",
-    title: "FITLOG",
-    category: "Next.js",
-    description:
-      "FITLOG is a responsive workout library that helps users discover exercises, review detailed instructions and performance stats, and organize their training. Users can build a daily workout plan, save exercises for later, mark workouts as completed, and sort or review their selections through a clean, dark-themed interface.",
-    image: "/images/projects/fitlog.png",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "DaisyUI",
-      "React Context API",
-      "React Hot Toast",
-    ],
-
-    features: [
-      "Browse a responsive exercise library",
-      "View detailed exercise instructions and stats",
-      "Add exercises to a daily workout plan",
-      "Save exercises for later",
-      "Mark workouts as completed",
-      "Remove exercises from plan or saved list",
-      "See totals for exercises, minutes, and calories",
-      "Responsive user interface",
-    ],
-
-    learned: [
-      "Structuring a multi-page Next.js application",
-      "Managing shared client state with React Context",
-      "Integrating a remote REST API into server components",
-      "Modeling exercise data with TypeScript interfaces",
-      "Building responsive, mobile-first layouts",
-      "Deriving totals and sorting from shared state",
-      "Designing reusable components for a multi-page workout application",
-    ],
-    challenges: [
-      "Fetching and rendering exercise data from an external API",
-      "Managing workout selection, saved exercises, and completed workout states",
-      "Preventing duplicate exercises and enforcing the five-exercise daily plan limit",
-    ],
-    improvements: [
-      "Add workout history to track completed exercises over time",
-      "Introduce weekly workout progress charts and statistics",
-    ],
-    github: "https://github.com/HridoyAhmedRafi/fit-log",
-    liveDemo: "https://fit-log-swart.vercel.app/",
-  },
 
   {
     id: 3,
@@ -120,7 +128,6 @@ export const projects = [
     image: "/images/projects/bazar-dor.png",
     technologies: [
       "Next.js",
-      "React",
       "TypeScript",
       "Tailwind CSS",
       "DaisyUI",
@@ -141,7 +148,7 @@ export const projects = [
       "Responsive mobile, tablet, and desktop experience",
     ],
     challenges: [
-      "Authentication session handling after social sign-in",
+      "Integrating multiple APIs and data fetching efficiently in the frontend.",
       "Resolving Better Auth's invalid origin issue during Vercel deployment",
       "Ensuring consistent authentication state across page navigation and refresh",
     ],
@@ -150,64 +157,10 @@ export const projects = [
       "Expand market coverage to compare prices across more local markets in Bangladesh",
     ],
 
-    learned: [
-      "Structuring a Next.js App Router project by feature",
-      "Integrating external REST APIs into server-rendered pages",
-      "Implementing email and OAuth authentication with Better Auth",
-      "Persisting sessions and user data in MongoDB",
-      "Protecting routes and adapting UI to session state",
-      "Building responsive Bengali interfaces with Tailwind CSS and DaisyUI",
-      "Implementing product filtering",
-      "Displaying product details and comparing prices across multiple markets",
-      "Managing user profile information and updating usernames",
-      "Formatting dates in Bengali",
-      "Deploying a Next.js application on Vercel and troubleshooting deployment issues",
-    ],
     github: "https://github.com/HridoyAhmedRafi/bazar-dor",
     liveDemo: "https://bazar-dor-phi-ashen.vercel.app",
   },
 
-  // {
-  //   id: 4,
-  //   slug: "devstack",
-  //   title: "DevStack",
-  //   category: "React",
-  //   description:
-  //     "DevStack is a web app that helps developers explore and assemble their ideal technology stack. Browse a curated catalog of frontend, backend, database, language, styling, and tooling options, compare key details at a glance, then add favorites to a personal stack that updates instantly and can be refined anytime.",
-  //   image: "/images/projects/devstack.png",
-  //   technologies: [
-  //     "React",
-  //     "TypeScript",
-  //     "Tailwind CSS",
-  //     "Vite",
-  //     "React Icons",
-  //     "React Toastify",
-  //   ],
-
-  //   features: [
-  //     "Explore different web technologies",
-  //     "Add technologies to Your Stack with a single click",
-  //     "Prevent duplicate selections: added technologies show an Added to Stack state and a disabled button",
-  //     "View the number of selected technologies in Your Stack",
-  //     "Remove individual technologies from the stack",
-  //     "Remove all selected technologies at once",
-  //     "Show toast notifications for adding, removing, and clearing technologies",
-  //     "Responsive layout for mobile, tablet, and desktop screens",
-  //   ],
-
-  //   learned: [
-  //     "React component architecture",
-  //     "TypeScript type decalarations",
-  //     "Reusable UI components",
-  //     "Building interactive user interfaces",
-  //     "Lifting and sharing state across sibling components",
-  //     "Responsive design sense",
-  //   ],
-  //   challenges: ["Session handling after social sign-in: fixed by ..."],
-  //   improvements: ["Add a bookmark feature for saved articles"],
-  //   github: "https://github.com/HridoyAhmedRafi/DevStack",
-  //   liveDemo: "https://dev-stack-taupe.vercel.app/",
-  // },
 ];
 
 export const getProjectBySlug = (slug) =>
