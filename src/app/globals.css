@@ -3,37 +3,37 @@
 /* Tailwind v4: makes `dark:` classes work with next-themes (class strategy) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Light mode colors */
+/* Light mode colors (Electric Indigo scheme) */
 :root {
-  --background: #f1f5f9;
+  --background: #f8fafc;
   --foreground: #0f172a;
   --card: #ffffff;
   --border: #e2e8f0;
   --muted: #334155;
-  --accent: #2563eb;
+  --accent: #4f46e5;
   --accent-foreground: #ffffff;
   /* Accent used for text: darker in light mode, lighter in dark mode */
-  --accent-text: #1d4ed8;
+  --accent-text: #4338ca;
   /* Secondary accent, reserved for status details */
-  --highlight: #0f766e;
+  --highlight: #0284c7;
   /* Elevated surface, one step above cards */
   --elevated: #ffffff;
   --footer: #ffffff;
 }
 
-/* Dark mode colors (Dark Blue scheme) */
+/* Dark mode colors (Electric Indigo & Midnight Navy scheme) */
 .dark {
-  --background: #0f172a;
+  --background: #090d1a;
   --foreground: #f8fafc;
-  --card: #1e293b;
-  --border: #334155;
+  --card: #131b2e;
+  --border: #222f4c;
   --muted: #cbd5e1;
-  --accent: #3b82f6;
+  --accent: #6366f1;
   --accent-foreground: #ffffff;
-  --accent-text: #60a5fa;
-  --highlight: #2dd4bf;
-  --elevated: #263449;
-  --footer: #0b1120;
+  --accent-text: #818cf8;
+  --highlight: #38bdf8;
+  --elevated: #1a253e;
+  --footer: #060912;
 }
 
 /* Connect the variables to Tailwind classes (bg-card, text-muted, etc.) */
