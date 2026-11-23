@@ -3,10 +3,11 @@ export const profile = {
   title: "Full Stack Developer",
   titles: [
     "Full Stack Developer",
+    "MERN Stack Developer",
     "Frontend Developer",
-    "Problem Solver",
-    "Lifelong Learner & AI Enthusiast",
-    "Web Developer",
+    "React & Next.js Developer",
+    "Backend Developer",
+    "Dedicated Learner"
   ],
   intro:
     "I build modern, scalable, and user-friendly web applications with a passion for clean code and great UX.",
@@ -15,7 +16,6 @@ export const profile = {
   whatsapp: "+8801339528738",
   location: "Brahmanbaria, Chattogram, Bangladesh",
   availability: "Available for work",
-  resume: null, // e.g. "/resume.pdf" (file goes in the public folder)
-  // Put your photo in public/images/ and write the path here, e.g. "/images/profile.jpg"
+  resume: "/resume.pdf",
   image: "/images/profilePicture.jpg",
 };

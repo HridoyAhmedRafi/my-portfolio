@@ -18,7 +18,7 @@ export const skills = [
   { name: "React.js", icon: FaReact, color: "text-[#087ea4] dark:text-[#61dafb]" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06b6d4]" },
-  { name: "Shadcn", icon: SiShadcnui, color: "text-white" },
+  { name: "Shadcn", icon: SiShadcnui, color: "text-black dark:text-white" },
   { name: "Node.js", icon: SiNodedotjs, color: "text-[#5fa04e]" },
   { name: "Express.js", icon: SiExpress, color: "text-black dark:text-white" },
   { name: "MongoDB", icon: SiMongodb, color: "text-[#47a248]" },

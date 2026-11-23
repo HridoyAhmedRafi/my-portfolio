@@ -28,13 +28,6 @@ export default function Hero() {
     .slice(0, 2)
     .join("");
 
-  const codeSnippet = `const developer = {
-  name: "${profile.name}",
-  role: "${profile.title}",
-  stack: ["React", "Next.js", "Tailwind CSS"],
-  learning: ["Backend", "Databases"],
-};`;
-
   return (
     <section
       id="home"
@@ -68,14 +61,14 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-3 text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+            className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
           >
             {profile.name}
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-4 min-h-7 text-xl font-medium text-muted sm:min-h-8 sm:text-2xl"
+            className="mt-4 min-h-7 text-[18px] font-medium text-muted sm:min-h-8 sm:text-[20px]"
           >
             <TypingText titles={profile.titles} fallback={profile.title} />
           </motion.p>
@@ -132,7 +125,7 @@ export default function Hero() {
           className="order-1 mx-auto w-full min-w-0 max-w-sm lg:order-2 lg:max-w-md"
         >
           {/* Profile picture with pulsing outline rings */}
-          <div className="relative mx-auto aspect-square w-56 sm:w-64 lg:w-72">
+          <div className="relative mx-auto aspect-square w-60 sm:w-72 lg:w-80">
             <span
               aria-hidden="true"
               className="ring-pulse absolute inset-0 rounded-full border-2 border-accent"
@@ -162,12 +155,6 @@ export default function Hero() {
                 </div>
               )}
             </div>
-          </div>
-
-          <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-card p-4 shadow-sm transition-colors duration-300 hover:border-accent dark:shadow-none">
-            <pre className="font-mono text-xs leading-relaxed text-muted sm:text-sm">
-              <code>{codeSnippet}</code>
-            </pre>
           </div>
         </motion.div>
       </div>

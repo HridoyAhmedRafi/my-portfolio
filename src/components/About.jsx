@@ -38,7 +38,7 @@ export default function About() {
         {/* Photo with pulsing outline rings */}
         {showPhoto && (
           <Reveal className="min-w-0">
-            <div className="relative mx-auto aspect-square w-56 sm:w-64 lg:w-72">
+            <div className="relative mx-auto aspect-square w-60 sm:w-72 lg:w-80">
               <span
                 aria-hidden="true"
                 className="ring-pulse absolute inset-0 rounded-full border-2 border-accent"

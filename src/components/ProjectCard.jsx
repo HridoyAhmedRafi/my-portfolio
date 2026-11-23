@@ -4,12 +4,18 @@ import { ArrowRight, ExternalLink, LayoutTemplate } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 export default function ProjectCard({ project }) {
-  const { slug, title, description, image, github, liveDemo } = project;
+  const { slug, title, category, description, image, github, liveDemo } = project;
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
       {/* Project image */}
       <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-background">
+        {category && (
+          <span className="absolute left-3 top-3 z-10 rounded-full border border-white/15 bg-black/60 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-white shadow-md backdrop-blur-md">
+            {category}
+          </span>
+        )}
+
         {image ? (
           <Image
             src={image}

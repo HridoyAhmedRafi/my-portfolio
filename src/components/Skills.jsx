@@ -13,11 +13,11 @@ export default function Skills() {
         />
 
         {/* Skills grid */}
-        <ul className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+        <ul className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
           {skills.map(({ name, icon: Icon, color }, index) => (
             <li key={name} className="min-w-0">
-              <Reveal delay={index * 0.05} className="h-full">
-                <div className="group flex h-full flex-col items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-2 py-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
+              <Reveal delay={index * 0.05} className="h-full ">
+                <div className=" group flex h-full flex-col items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-2 py-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent dark:shadow-none">
                   <Icon
                     size={28}
                     aria-hidden="true"
