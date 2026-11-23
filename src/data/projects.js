@@ -2,6 +2,74 @@ export const projects = [
 
   {
     id: 1,
+    slug: "salon-book",
+    title: "SalonBook",
+    category: "Full-Stack Salon Appointment Booking",
+
+    description:
+      "SalonBook is a full-stack salon appointment booking platform where customers can explore salon services, view detailed service information, and request appointments online. The salon administrator can create and manage salon services, review appointment requests, confirm or cancel appointments, and monitor customer payments. Customers can manage their appointment requests and securely pay for confirmed appointments through Stripe.",
+
+    image: "/images/projects/salon-book.png",
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Better Auth",
+      "Stripe",
+      "Shadcn/ui",
+      "Lucide React",
+      "Sonner",
+      "ImgBB",
+    ],
+
+    features: [
+      "Email and password authentication with Google OAuth",
+      "Browse, search, filter, and sort salon services",
+      "View detailed service information and availability",
+      "Request appointments with date and time-slot selection",
+      "Manage personal appointments and cancel pending bookings",
+      "Customer dashboard with appointment summaries and booking history",
+      "Update customer profile information and profile image",
+      "Admin dashboard with customer, service, appointment, and payment analytics",
+      "Complete salon service management (Create, Edit, Activate, Deactivate, and Delete)",
+      "Manage appointment requests with confirmation and cancellation",
+      "Customer account management with block and unblock controls",
+      "Secure Stripe Checkout with payment session verification",
+      "Monitor successful payment transactions",
+      "Upload and manage service images through ImgBB",
+      "Responsive desktop, tablet, and mobile layouts",
+    ],
+
+    challenges: [
+      "Implementing authentication and authorization",
+      "Implementing role-based access control for customers and administrators",
+      "Securing protected routes and backend API operations",
+      "Enforcing role-based restrictions on appointment management",
+      "Integrating Stripe Checkout for secure online payments",
+      "Verifying Stripe payment sessions and managing transaction records",
+      "Synchronizing appointment and payment data between frontend and backend",
+      "Handling API errors and asynchronous operations across the application",
+    ],
+
+    improvements: [
+      "Add email notifications for appointment confirmations and cancellations",
+      "Add customer reviews and service ratings",
+      "Improve payment verification and transaction tracking",
+      "Introduce customer booking history and analytics",
+    ],
+
+    github: "https://github.com/HridoyAhmedRafi/salon-book",
+    liveDemo: "https://salon-book-nine.vercel.app",
+  },
+
+
+
+  {
+    id: 2,
     slug: "studio-space",
     title: "StudioSpace",
     category: "Full-Stack Marketplace & Booking",
@@ -65,58 +133,6 @@ export const projects = [
     liveDemo: "https://studio-space-three.vercel.app",
   },
 
-
-
-  {
-    id: 2,
-    slug: "bangla-news-24",
-    title: "Bangla News 24",
-    category: "Next.js & Authentication",
-    description:
-      "Bangla News 24 is a modern Bengali news web application designed to help users stay updated with the latest news. It features organized news sections, live news indicators, and a user-friendly interface. The platform also includes secure authentication, session management, and profile management, allowing users to update their personal information.",
-
-    image: "/images/projects/bangla-news-24.png",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "daisyUI",
-      "Better Auth",
-      "MongoDB",
-      "Resend",
-      "Google OAuth",
-      "GitHub OAuth",
-    ],
-
-    features: [
-      "Browse latest news",
-      "Category-based news browsing",
-      "Most-read stories sidebar",
-      "Scrolling latest-headlines ticker",
-      "View individual news articles",
-      "User Sign Up, Sign In and Sign Out",
-      "Email & Password authentication",
-      "Google and GitHub social sign-in",
-      "Editable user profile",
-      "Toast notifications for user feedback",
-      "Responsive desktop and mobile layouts",
-    ],
-
-
-    challenges: [
-      "Configuring OAuth redirect URLs for social sign-in in production",
-      "Separating sign-up and sign-in flows by disabling automatic sign-in after registration",
-      "Managing authentication state and keeping user profile information synchronized",
-      "Handling loading and error states while fetching news articles",
-    ],
-    improvements: [
-      "Add a bookmark feature to save articles for later reading",
-      "Implement personalized news recommendations based on user interests",
-      "Add a search feature to find articles by title or keywords",
-    ],
-    github: "https://github.com/HridoyAhmedRafi/bangla-news-24",
-    liveDemo: "https://bangla-news-24-teal.vercel.app/",
-  },
 
   {
     id: 3,

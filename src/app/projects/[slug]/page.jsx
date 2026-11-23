@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }) {
   } = project;
 
   return (
-    <article className="mx-auto max-w-4xl px-6 pb-24 pt-28">
+    <article className="mx-auto max-w-6xl px-6 pb-24 pt-28">
       <Link
         href="/#projects"
         className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent-text"
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }) {
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-3xl text-pretty text-md leading-relaxed text-muted">
+        <p className="mt-4 max-w-4xl text-pretty text-md leading-relaxed text-muted">
           {detailsDescription ?? description}
         </p>
 
