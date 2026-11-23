@@ -5,16 +5,23 @@ import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   const handleToggle = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    setTheme(isDark ? "light" : "dark");
   };
+
+  const label = resolvedTheme
+    ? `Switch to ${isDark ? "light" : "dark"} theme`
+    : "Toggle theme";
 
   return (
     <button
       type="button"
       onClick={handleToggle}
-      aria-label="Toggle theme"
+      aria-label={label}
+      title={label}
+      suppressHydrationWarning
       className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background transition-colors hover:border-accent"
     >
       {/* Dark mode is on: show the Moon */}
